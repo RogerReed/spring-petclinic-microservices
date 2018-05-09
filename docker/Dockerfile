@@ -7,4 +7,5 @@ ADD ${ARTIFACT_NAME}.jar /app.jar
 ENV SPRING_PROFILES_ACTIVE docker
 RUN bash -c 'touch /app.jar'
 EXPOSE ${EXPOSED_PORT}
-ENTRYPOINT ["java", "-XX:+UnlockExperimentalVMOptions", "-XX:+UseCGroupMemoryLimitForHeap", "-Djava.security.egd=file:/dev/./urandom","-jar","/app.jar"]
+ENTRYPOINT ["java", "-Dhttp.proxyHost=${HTTP_PROXY_HOST}", "-Dhttp.proxyPort=${HTTP_PROXY_PORT}", "-Djava.security.egd=file:/dev/./urandom","-jar","/app.jar"]
+

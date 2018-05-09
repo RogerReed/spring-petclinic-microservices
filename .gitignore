@@ -9,6 +9,12 @@ target/
 # IntelliJ IDEA
 .idea
 *.iml
+*.ipr
+*.iws
 
 # Branch switching
 generated/
+
+.history
+
+.DS_Store
